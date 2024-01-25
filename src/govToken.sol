@@ -16,4 +16,8 @@ contract GovToken is ERC20, ERC20Permit, ERC20Votes {
     function nonces(address owner) public view override(ERC20Permit, Nonces) returns (uint256) {
         return super.nonces(owner);
     }
+
+    function mint(address to, uint256 amount) public {
+        _mint(to, amount);
+    }
 }
